@@ -20,9 +20,13 @@ that should be installed before installing other packages such as scipy:
 ```bash
 conda create -n questio python=3.10 -y
 conda activate questio
+
 pip install "numpy>=1.22.4,<1.29.0"
-pip install scipy gensim cltk spacy
-pip install "la-core-web-lg @ https://huggingface.co/latincy/la_core_web_lg/resolve/main/la_core_web_lg-any-py3-none-any.whl"
+pip install scipy gensim scikit-learn nltk tqdm
+pip install "spacy>=3.8.11,<3.9.0"
+
+pip install \
+"https://huggingface.co/latincy/la_core_web_lg/resolve/main/la_core_web_lg-3.9.5-py3-none-any.whl"
 ```
 
 You should also download some _nltk_ models:
@@ -30,15 +34,6 @@ You should also download some _nltk_ models:
 ```python
 import nltk
 nltk.download('punkt_tab')
-```
-
-This project also requires common packages:
-
-```
-scikit-learn
-nltk
-cltk
-tqdm
 ```
 
 ## Usage
